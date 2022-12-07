@@ -2,6 +2,8 @@ package com.human.cafe;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,9 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.human.service.IF_memberService;
+import com.human.vo.MemberVO;
+
 @RestController
 public class LoginController {
 	
+	@Inject
+	private IF_memberService memberSrv;
 	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
 	public String idchk(@RequestParam String userid, @RequestParam String pwd) {// jsp에서 JSON.stringify 없어야 함.
 		
@@ -63,23 +70,23 @@ public class LoginController {
 
 	//REST 동작 정의
 	// 삭제
-/*
+
 		@DeleteMapping("/users/{id}")
 		public int deleteUser(@PathVariable int id) {
-			return dao.deleteUser(id);
+			return memberSrv.deleteUser(id);
 		}
 		
 		// 수정
 		@PutMapping("/users")
-		public int updateUser(@RequestBody UserVO user) {
-			return dao.updateUser(user);
+		public int updateUser(@RequestBody MemberVO user) {
+			return memberSrv.updateUser(user);
 		}
 		
 		
 		// 등록
 		@PostMapping("/users")
-		public int insertUser(@RequestBody UserVO user) {
-			return dao.insertUser(user);
+		public int insertUser(@RequestBody MemberVO user) {
+			return memberSrv.insertUser(user);
 		}
 		
 		
@@ -87,15 +94,15 @@ public class LoginController {
 		// 1명 조회
 		@GetMapping("/users/{userid}")
 		public UserVO user(@PathVariable String userid) {
-			return dao.getUser(userid);
+			return memberSrv.getUser(userid);
 		}
 		
 		
 		// 목록조회
 		@GetMapping("/users")
-		public List<UserVO> users(){
-			return dao.getUsers();
+		public List<MemberVO> users(){
+			return memberSrv.getUsers();
 		}
-	*/	
+		
 
 }
