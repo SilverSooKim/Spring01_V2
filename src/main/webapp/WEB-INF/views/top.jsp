@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main.css">
+</head>
+<body>
+	<div id="titleDV">Kim Teacher HomePage</div>
+	<div id="logininfo">
+		<!--<sec:authorize access="isAnonymous()">			
+				<a href='<c:url value="loginPage"/>'>LOGIN</a> 로그인 해주세요.			
+		</sec:authorize>-->
+		 	
+		Login user : ${session_userid} 님 로그인 
+		<c:if test="${session_userid != null }">
+			<a href="logout">[로그아웃]</a>
+		</c:if>
+	</div>
+
+	<header> 스프링게시판1</header>
+
+	<nav>
+		<a href="/cafe/">[home]</a> <a href="wrForm">[Write]</a> <a
+			href="bbsList">[BBSList]</a>
+
+	</nav>
+
+
+</body>
+</html>
