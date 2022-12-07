@@ -72,11 +72,11 @@ public class LoginController {
 	// 삭제
 
 		@DeleteMapping("/users/{id}")
-		public int deleteUser(@PathVariable int id) {
+		public int deleteUser(@PathVariable String id) throws Exception {
 			return memberSrv.deleteUser(id);
 		}
 		
-		// 수정
+/*		// 수정
 		@PutMapping("/users")
 		public int updateUser(@RequestBody MemberVO user) {
 			return memberSrv.updateUser(user);
@@ -103,6 +103,6 @@ public class LoginController {
 		public List<MemberVO> users(){
 			return memberSrv.getUsers();
 		}
-		
+		*/
 
 }

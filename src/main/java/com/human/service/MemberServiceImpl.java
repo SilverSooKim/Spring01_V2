@@ -16,9 +16,9 @@ public class MemberServiceImpl implements IF_memberService{
 		return memberdao.SelectOne(id);
 	}
 	@Override
-	public MemberVO deleteUser(String id) throws Exception {
+	public int deleteUser(String id) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 }
