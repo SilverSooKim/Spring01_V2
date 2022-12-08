@@ -23,7 +23,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 		"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
 public class Test2 {
 
-	
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
