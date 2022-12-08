@@ -35,7 +35,7 @@ public class BbsController {
 		String[] fileNames = fileDataUtil.fileUpload(file);
 		// 넘겨받은 파일명을  boardVO files변수에 저장한다.
 		bvo.setFiles(fileNames);
-		// 디비작업..
+		// 디비작업..합니다.
 		bsrv.insertOne(bvo);	
 		
 		return "redirect:/bbsList";  // 수정예정
