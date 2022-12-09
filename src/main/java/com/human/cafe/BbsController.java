@@ -84,6 +84,7 @@ public class BbsController {
 		bsrv.boardDel(vno);
 		return "redirect:bbsList";
 	}
+
 	@RequestMapping(value = "/bbsMod", method = RequestMethod.GET)
 	public String BBsMod(Locale locale, Model model, @RequestParam("vno") String vno) throws Exception{
 		BoardVO tempvo = bsrv.selectOne(vno);
