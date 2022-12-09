@@ -15,7 +15,7 @@ body {
 #logininfo{
 	width:324px;
 	height:20px;	
-	background-color: yellow;	
+	/*background-color: yellow;	*/
 	float:left;
 	
 }
@@ -55,10 +55,13 @@ section{
 	
 }
 
-#loginFrm{
+#loginFrm, #loginInfohome{
+	width:224px;
 	text-align: center;
-	margin-top:10px;
+	padding-top: 20px;
+	Box-sizing:border-box;
 }
+
 #loginFrm td{
 	text-align: center;
 }

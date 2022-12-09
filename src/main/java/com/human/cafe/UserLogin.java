@@ -41,7 +41,7 @@ public class UserLogin {
 			//인증이 처리되는 로직(아이디,암호를 스프링시큐리티 던져주고 인증은 스프링에서 알아서 해줌.)
 			enabled = ((UserDetails)principal).isEnabled();
 		}
-	//	userid =((UserDetails)principal).getUsername();
+		userid =((UserDetails)principal).getUsername();
 	//	System.out.println(userid+"님입니다");
 	//	session.setAttribute("session_userid", userid);
 		
@@ -102,9 +102,11 @@ public class UserLogin {
 		return "redirect:/loginPage";		
 	}
 	
-	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	// 현재 로그아웃은 security 에서 처리 하는 것..
+	@RequestMapping(value="/logout_After", method=RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate(); //세션을 무력화..
+		System.out.println("로그아웃처리 --- 디버깅");
 		return "home";
 	}
 }
