@@ -18,8 +18,6 @@ public class LoginController {
 	
 	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
 	public String idchk(@RequestParam String userid, @RequestParam String pwd) {// jsp에서 JSON.stringify 없어야 함.
-		
-		
 		if(userid.equals("111")) {
 			return "2";
 		}

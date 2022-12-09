@@ -7,6 +7,8 @@
 <head>
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/shopping.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<hr>
@@ -31,14 +33,14 @@
 			
 			<c:forEach items="${bList }" var="bvo">			
 					<tr class='record'>
-					<td style="text-align: center;"><input type="checkbox" name="wr_uid" value=${bvo.num }/></td>
+					<td style="text-align: center;"><input type="checkbox" name="wr_uid[]" value=${bvo.num } /></td>
 					<td style="text-align: center;"><a href='bbsView?vno=${bvo.num}'>${bvo.num }</a></td>	
-					<td style="text-align: left; padding-left: 10px;"><a href=''>${bvo.title }</td>
+					<td style="text-align: left; padding-left: 10px;">${bvo.title }</td>
 					<td style="text-align: center;">${bvo.name }</td>
 					<td style="text-align: center;">${bvo.indate }</td>
 					<td style="text-align: center;">${bvo.cnt }</td>
-					<td style="text-align: center;"><a href='bbsMod?vno=${bvo.num}'>M</a>/
-					<a href='bbsDel?vno=${bvo.num}'>D</a></td>
+					<td style="text-align: center;"><a href="#" onclick="confirmChk(1,'${bvo.num}')">M</a>/
+					<a href="#" onclick="confirmChk(2,'${bvo.num}')">D</a></td>
 					</tr>		
 			
 			</c:forEach>
@@ -46,7 +48,7 @@
 			<!--  paging -->
 			<tr>
 				<td style="text-align: center;" >	
-					<input type="submit" value="선택삭제"/>
+					<input type="button" value="선택삭제" onclick="selectDel()"/>
 				</td>
 				<td  colspan=6 style="text-align: center;">
 					<c:if test="${pageVO.prev }">
@@ -66,4 +68,46 @@
 		</form>
 	</div>
 </body>
+<script>
+
+	function confirmChk(flag,num){
+		if(flag==1){			
+			if(checkflag = confirm("수정하시겠습니까?")){
+				location.href="bbsMod?vno="+num;				
+			}else{				
+				alert("취소하였습니다.");
+			}
+		}else if(flag==2){
+			if(checkflag = confirm("삭제하시겠습니까?")){
+				location.href="bbsDel?vno="+num;				
+			}else{				
+				alert("취소하였습니다.");
+			}		
+		}	
+		
+	}
+	function selectDel(){
+		//var delList =  $('input[name=wr_uid]:checked');
+	//	alert(delList);
+		
+		var chkArray = new Array();
+		var delList = $("input[name='wr_uid[]']:checked");
+		
+		if(delList.length < 1){
+			alert("값을 선택해주시기 바랍니다.");
+		      return;			
+		}else if(confirm("삭제하시겠습니까? ")){
+			 $("input[name='wr_uid[]']:checked").each(function() { 
+			      var tmpVal = $(this).val(); 
+			      chkArray.push(tmpVal);
+			     
+			    });
+		//	    console.log(chkArray);	// (2) ["A", "B"]	
+			
+		}else{
+			alert("취소하였습니다.");
+			return;
+		}	   
+	}
+</script>
 </html>
