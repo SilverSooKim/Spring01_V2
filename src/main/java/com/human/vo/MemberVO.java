@@ -4,8 +4,29 @@ public class MemberVO {
 	private String id;
 	private String name;
 	private int point;
-
+	private String pass;
+	private String levels;
+	private int enaled;
 	
+	
+	public String getLevels() {
+		return levels;
+	}
+	public void setLevels(String levels) {
+		this.levels = levels;
+	}
+	public int getEnaled() {
+		return enaled;
+	}
+	public void setEnaled(int enaled) {
+		this.enaled = enaled;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 	public String getId() {
 		return id;
 	}

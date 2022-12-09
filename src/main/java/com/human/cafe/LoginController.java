@@ -1,24 +1,24 @@
 package com.human.cafe;
 
-import java.util.List;
+import javax.inject.Inject;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.human.service.IF_memberService;
+import com.human.vo.MemberVO;
+
 @RestController
 public class LoginController {
+	@Inject
+	IF_memberService memberService;
 	
 	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
-	public String idchk(@RequestParam String userid, @RequestParam String pwd) {// jsp에서 JSON.stringify 없어야 함.
-		if(userid.equals("111")) {
+	public String idchk(@RequestParam String userid, @RequestParam String pwd) throws Exception{// jsp에서 JSON.stringify 없어야 함.
+		MemberVO m = memberService.selectOne(userid);
+		if(m.getPass().equals(pwd)) {
 			return "2";
 		}
 		System.out.println("kkkk >  " + userid +"/" +pwd );
