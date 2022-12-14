@@ -1,5 +1,6 @@
 package com.human.cafe;
 
+import java.security.Principal;
 import java.util.Collection;
 import java.util.Locale;
 
@@ -13,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -31,8 +33,9 @@ public class UserLogin {
     }
 
 	@RequestMapping(value="/login_sucess", method=RequestMethod.GET)
-	public String login(HttpSession session,Locale locale) throws Exception{
+	public String login(HttpSession session,Locale locale, Model model, Principal p) throws Exception{
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(p.getName()+"asdfasfasf");
 		String userid = "";//아이디
 		String levels = "";//ROLE_ANONYMOUS
 		Boolean enabled = false;
@@ -63,6 +66,7 @@ public class UserLogin {
 			//회원이름 구하기 추가
 		//	MemberVO memberVO = memberService.viewMember(userid);
 		//	session.setAttribute("session_username", memberVO.getUser_name());//사용자명
+			model.addAttribute("principal",principal);
         }
 		return "redirect:/";		
 	}

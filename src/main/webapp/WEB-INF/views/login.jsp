@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="./top.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+
+
+</style>
 
 </head>
 <body>
-	<div id="loginDV">
+	<div id="loginCenter">
 		<form id="loginFrm" action="login" method="post">
 			<table>
 				<tr>

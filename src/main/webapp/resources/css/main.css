@@ -17,25 +17,21 @@ body {
 	height:20px;	
 	/*background-color: yellow;	*/
 	float:left;
+	text-align:right;
 	
 }
 header{
 	width:1024px;
-	height:50px;
-	padding-top:15px;
+	height:120px;
+	padding-top:18px;
 	padding-left:10px;
 	vertical-align: top;
 	Box-sizing:border-box;
-	background-color: green;	
+	background-color: #1ebd9d;	
 	float:left;
 	
 }
-nav{
-	Box-sizing:border-box;
-	border: 1px solid gray;
-	padding-left:10px;
-	Box-sizing:border-box;
-}
+
 a{
 	text-decoration:  none;
 }
@@ -73,4 +69,18 @@ section{
 	height:300px;
 	float:left;
 	
+}
+#loginCenter{
+	width:1024px;
+	height: 400px;
+	padding-top:100px;
+	text-align:center;
+	background-image: url("../img/loginBak.jpg");
+
+}
+#loginFrm{
+	/*background-color: red;*/
+	display:inline-block;
+	width:220px;
+	margin: 0 auto;
 }

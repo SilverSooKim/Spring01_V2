@@ -60,7 +60,7 @@
 	$.ajax({
 		type : 'GET',
 		url : "top10/js",
-		dataType : "json",
+		dataType : "",
 		success : function(data) {
 			console.log('성공 - ', data);
 			getData = data;
