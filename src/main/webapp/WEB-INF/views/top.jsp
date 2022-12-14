@@ -22,36 +22,30 @@
 body {
 	font-size: 12px;
 }
-
 nav {
 	width: 1024px;
 	height: 30px;
 	background-color: bisque;
 	display: inline-block;
 	/*  border: 5px solid;*/
-	padding: 5px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	Box-sizing: border-box;
 }
-
 nav>ul {
 	/*border: 5px solid;*/
 	margin-top: 2px;
 	list-style: none;
 }
-
 nav>ul>li {
 	display: inline-block;
 }
-
 nav>ul>li>a {
 	text-decoration-line: none;
 }
-
 nav>ul>li>a:hover {
 	text-decoration-line: none;
 	background-color: cadetblue;
 }
-
 nav>ul>li>a:visit {
 	text-decoration-line: none;
 	background-color: cadetblue;
