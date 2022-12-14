@@ -38,9 +38,7 @@
 								type="button" value="신규가입"> <input
 								name="${_csrf.parameterName}" type="hidden"
 								value="${_crsf.token}"></td>
-
 						</tr>
-
 					</table>
 				</form>
 			</c:otherwise>
@@ -81,29 +79,27 @@
 		}
 	});
 
-	$
-			.ajax({
-				type : "GET",
-				url : "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
-				data : {},
-				success : function(response) {
-					console.log(typeof (response));
-					let mise_list = response["RealtimeCityAir"]["row"];
-					console.log(response["RealtimeCityAir"]["row"]);
-					for (let i = 0; i < mise_list.length; i++) {
-						let mise = mise_list[i];
-						let gu_name = mise["MSRSTE_NM"];
-						let gu_mise = mise["IDEX_MVL"];
-						console.log(gu_name, gu_mise);
-
+	$.ajax({
+		type : "GET",
+		url : "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+		data : {},
+		success : function(response) {
+			//console.log(typeof (response));
+			let mise_list = response["RealtimeCityAir"]["row"];
+			//console.log(response["RealtimeCityAir"]["row"]);
+			for (let i = 0; i < mise_list.length; i++) {
+				let mise = mise_list[i];
+				let gu_name = mise["MSRSTE_NM"];
+				let gu_mise = mise["IDEX_MVL"];
+				console.log(gu_name, gu_mise);
 						//	var innerHtml = "";
 						//	innerHtml += '<tr>';
 						//	innerHtml += '    <td>' + gu_name + '</td>';
 						//	innerHtml += '    <td>' + gu_mise + '</td>';
 						//	innerHtml += '</tr>';
 						//	$('#tbl > tbody').append(innerHtml);
-					}
-				}
-			});
+			}
+		}
+	});
 </script>
 </html>

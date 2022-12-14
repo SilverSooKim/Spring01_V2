@@ -26,7 +26,7 @@ public class BbsController {
 	@Inject
 	private FileDataUtil fileDataUtil;
 	
-	@RequestMapping(value = "/wrAction", method = RequestMethod.POST)
+	@RequestMapping(value = "/bbswrAction", method = RequestMethod.POST)
 	public String WrAction(Locale locale, Model model, BoardVO bvo, MultipartFile[] file) throws Exception{
 		// 객체로 받을 때는 파라미터이름과 객체의  변수의 이름이 일치하고 getter, setter가 있어야 한다. > 자동매핑
 		//System.out.println(bvo.getName() +" -- 디버깅용도");
@@ -64,7 +64,7 @@ public class BbsController {
 		model.addAttribute("pageVO",pageVO);  // 페이지 객체를 view에게 전달 
 		return "bbs/bbsList";  // 수정예정
 	}
-	@RequestMapping(value = "/wrForm", method = RequestMethod.GET)
+	@RequestMapping(value = "/bbswrForm", method = RequestMethod.GET)
 	public String WrAction1(Locale locale, Model model) {
 		return "bbs/wrForm";
 	}

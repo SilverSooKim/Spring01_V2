@@ -67,7 +67,7 @@
 	<nav>
 		<ul>
 			<li><a href="/cafe/">[home]</a></li>
-			<li><a href="wrForm">[Write]</a></li>
+			<li><a href="bbswrForm">[Write]</a></li>
 			<li><a href="bbsList">[BBSList]</a></li>
 		</ul>
 	</nav>

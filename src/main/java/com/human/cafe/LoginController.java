@@ -79,8 +79,7 @@ public class LoginController {
 		public int insertUser(@RequestBody UserVO user) {
 			return dao.insertUser(user);
 		}
-		
-		
+				
 		
 		// 1명 조회
 		@GetMapping("/users/{userid}")

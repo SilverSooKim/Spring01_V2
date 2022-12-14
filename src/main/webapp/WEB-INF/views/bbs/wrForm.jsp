@@ -21,7 +21,7 @@
 <body>
 	<div id="wrap" align="center">
 		<h1>게시글 등록</h1>
-		<form name="frm" method="post" action="wrAction"
+		<form name="frm" method="post" action="bbswrAction"
 			encType="multipart/form-data">
 			<!--  encType을 적어 줘야만 첨부파일이 서버로 전송된다. -->
 			<table>
