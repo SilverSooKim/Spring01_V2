@@ -23,7 +23,7 @@ body {
 	font-size: 12px;
 }
 nav {
-	width: 1024px;
+	width: 1280px;
 	height: 30px;
 	background-color: bisque;
 	display: inline-block;
