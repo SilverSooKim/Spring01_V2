@@ -19,9 +19,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <style>
-body {
-	font-size: 12px;
-}
+
 nav {
 	width: 1280px;
 	height: 30px;
